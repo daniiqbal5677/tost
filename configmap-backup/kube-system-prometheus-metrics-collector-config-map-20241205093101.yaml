@@ -1,0 +1,741 @@
+apiVersion: v1
+data:
+  containerd-metrics-collector-config-data: |-
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://${HOST_LOOPBACK}:1338/v1/metrics"
+      target_name: "containerd"
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+
+    metrics: {
+      source_metric_name: "containerd_cri_network_plugin_operations_duration_seconds_seconds",
+      export_metric_name: "kubernetes.io/internal/nodes/containerd/network_plugin_operations_duration_seconds",
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      },
+      description: "latency in seconds of network plugin operations. Broken down by operation type.",
+      unit: "seconds",
+      value_type: VALUE_TYPE_DISTRIBUTION,
+      metric_kind: METRIC_KIND_CUMULATIVE,
+      metric_labels: {
+        source_name: "operation_type",
+        type: METRIC_LABEL_STRING,
+        description: "operation type."
+      }
+    },
+    metrics: {
+      source_metric_name: "containerd_cri_network_plugin_operations_total_total",
+      export_metric_name: "kubernetes.io/internal/nodes/containerd/network_plugin_operations_total",
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      },
+      description: "cumulative number of network plugin operations by operation type.",
+      unit: "1",
+      value_type: VALUE_TYPE_INT64,
+      metric_kind: METRIC_KIND_CUMULATIVE,
+      metric_labels: {
+        source_name: "operation_type",
+        type: METRIC_LABEL_STRING,
+        description: "operation type."
+      }
+    },
+    metrics: {
+      source_metric_name: "containerd_cri_network_plugin_operations_errors_total_total",
+      export_metric_name: "kubernetes.io/internal/nodes/containerd/network_plugin_operations_errors_total",
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      },
+      description: "cumulative number of network plugin operations error by operation type.",
+      unit: "1",
+      value_type: VALUE_TYPE_INT64,
+      metric_kind: METRIC_KIND_CUMULATIVE,
+      metric_labels: {
+        source_name: "operation_type",
+        type: METRIC_LABEL_STRING,
+        description: "operation type."
+      }
+    }
+  kube-proxy-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://${HOST_LOOPBACK}:10249/metrics"
+      target_name: "kube-proxy"
+    }
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "SyncProxyRules latency in seconds."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_last_timestamp_seconds"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_last_timestamp_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "The last time proxy rules were successfully synced."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_network_programming_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/network_programming_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "In Cluster Network Programming Latency in seconds."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_endpoint_changes_pending"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_endpoint_changes_pending"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Pending proxy rules Endpoint changes."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_endpoint_changes_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_endpoint_changes_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Cumulative proxy rules Endpoint changes."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_service_changes_pending"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_service_changes_pending"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Pending proxy rules Service changes."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_service_changes_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_service_changes_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Cumulative proxy rules Service changes."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubeproxy_sync_proxy_rules_iptables_restore_failures_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubeproxy/sync_proxy_rules_iptables_restore_failures_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Cumulative proxy iptables restore failures."
+      unit: "1"
+    }
+  kubelet-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "https://${KUBELET_HOST}:10250/metrics"
+      target_name: "kubelet"
+
+      authorization: {
+        type: "Bearer"
+        credentials_file: "/var/run/secrets/kubernetes.io/serviceaccount/token"
+        ca_file: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+      }
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "csi_operations_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/csi_operations_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "driver_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the CSI Driver."
+      }
+      metric_labels: {
+        source_name: "grpc_status_code"
+        type: METRIC_LABEL_STRING
+        description: "The gRPC status code of the response."
+      }
+      metric_labels: {
+        source_name: "method_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the CSI operation."
+      }
+      metric_labels: {
+        source_name: "migrated"
+        type: METRIC_LABEL_BOOL
+        description: "Whether CSI Migration is enabled."
+      }
+      description: "Duration in seconds of Container Storage Interface (CSI) operations invoked by kubelet.\ndriver_name(String): Name of the CSI Driver.\nmethod_name(String): Name of the CSI operation.\ngrpc_status_code(String): The gRPC status code of the response.\nmigrated(Bool): Whether CSI Migration is enabled."
+      unit: "seconds"
+    }
+    metrics: {
+      source_metric_name: "kubelet_credential_provider_plugin_duration"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/credential_provider_plugin_duration"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "plugin_name"
+        type: METRIC_LABEL_STRING
+        description: "plugin_name"
+      }
+      description: "Duration of execution in seconds for credential provider plugin."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_credential_provider_plugin_errors"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/credential_provider_plugin_errors"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "plugin_name"
+        type: METRIC_LABEL_STRING
+        description: "plugin_name"
+      }
+      description: "Cumulative number of kubelet image credential provider errors by provider name on user nodes."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_docker_operations_errors_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/docker_operations_errors_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Type of the operation, for example create_container, stop_container, pull_image, etc."
+      }
+      description: "Cumulative number of Docker operation errors by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_docker_operations_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/docker_operations_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Type of the operation, for example create_container, stop_container, pull_image, etc."
+      }
+      description: "Cumulative number of Docker operations by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_http_requests_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/http_requests_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "long_running"
+        type: METRIC_LABEL_STRING
+        description: "whether the request is long-running or not: yes or no"
+      }
+      metric_labels: {
+        source_name: "method"
+        type: METRIC_LABEL_STRING
+        description: "the http request method"
+      }
+      metric_labels: {
+        source_name: "path"
+        type: METRIC_LABEL_STRING
+        description: "the http request path"
+      }
+      metric_labels: {
+        source_name: "server_type"
+        type: METRIC_LABEL_STRING
+        description: "the http server type: readonly or readwrite"
+      }
+      description: "Number of the http requests received since the server started."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_network_plugin_operations_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/network_plugin_operations_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Container Network operation type."
+      }
+      description: "Latency in seconds of network plugin operations. Broken down by operation type."
+      unit: "seconds"
+    }
+    metrics: {
+      source_metric_name: "kubelet_network_plugin_operations_errors_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/network_plugin_operations_errors_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Container Network operation type."
+      }
+      description: "Cumulative number of network plugin operation errors by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_network_plugin_operations_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/network_plugin_operations_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Container Network operation type."
+      }
+      description: "Cumulative number of network plugin operations by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_pod_start_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/pod_start_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Duration in seconds for a single pod to go from pending to running."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "kubelet_pod_start_sli_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/pod_start_sli_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Duration in seconds to start a pod, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch"
+      unit: "seconds"
+    }
+    metrics: {
+      source_metric_name: "kubelet_pod_start_total_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/pod_start_total_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Duration in seconds to start a pod, including time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch"
+      unit: "seconds"
+    }
+    metrics: {
+      source_metric_name: "kubelet_runtime_operations_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/runtime_operations_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Operation type."
+      }
+      description: "Duration in seconds of runtime operations. Broken down by operation type."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "kubelet_runtime_operations_errors_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/runtime_operations_errors_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Type of the operation, for example create_container, stop_container, pull_image, etc."
+      }
+      description: "Cumulative number of runtime operation errors by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_runtime_operations_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/runtime_operations_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_type"
+        type: METRIC_LABEL_STRING
+        description: "Type of the operation, for example create_container, stop_container, pull_image, etc."
+      }
+      description: "Cumulative number of runtime operations by operation type."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "rest_client_requests_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/rest_client_requests_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "code"
+        type: METRIC_LABEL_STRING
+        description: "HTTP status code"
+      }
+      metric_labels: {
+        source_name: "host"
+        type: METRIC_LABEL_STRING
+        description: "The name of the host, usually an IP address"
+      }
+      metric_labels: {
+        source_name: "method"
+        type: METRIC_LABEL_STRING
+        description: "HTTP verb/method, for example: GET, POST, PUT"
+      }
+      description: "Number of HTTP requests, partitioned by status code, method, and host."
+      unit: "requests"
+    }
+    metrics: {
+      source_metric_name: "kubelet_running_containers"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/running_containers"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "container_state"
+        type: METRIC_LABEL_STRING
+        description: "The current state of the running container."
+      }
+      description: "Number of containers currently running."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kubelet_started_containers_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/started_containers_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "container_type"
+        type: METRIC_LABEL_STRING
+        description: "Container type."
+      }
+      description: "Cumulative number of containers started."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "storage_operation_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/storage_operation_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "migrated"
+        type: METRIC_LABEL_BOOL
+        description: "If the operation is for CSI migration"
+      }
+      metric_labels: {
+        source_name: "operation_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the storage operation"
+      }
+      metric_labels: {
+        source_name: "status"
+        type: METRIC_LABEL_STRING
+        description: "The status of the storage operation"
+      }
+      metric_labels: {
+        source_name: "volume_plugin"
+        type: METRIC_LABEL_STRING
+        description: "Name of the volume plugin executing the storage operation"
+      }
+      description: "Duration of storage operations.\nstatus: The status of the storage operation.\nvolume_plugin(String): The volume plugin of the operation.\noperation_name(String): The name of the operation.\nmigrated: If the operation is for CSI migration."
+      unit: "seconds"
+    }
+    metrics: {
+      source_metric_name: "storage_operation_errors_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/storage_operation_errors_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the storage operation"
+      }
+      metric_labels: {
+        source_name: "volume_plugin"
+        type: METRIC_LABEL_STRING
+        description: "Name of the volume plugin executing the storage operation"
+      }
+      description: "Count of storage operation errors.\nvolume_plugin(String): The volume plugin of the operation.\noperation_name(String): The name of the operation."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "storage_operation_status_count"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/storage_operation_status_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "operation_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the storage operation"
+      }
+      metric_labels: {
+        source_name: "status"
+        type: METRIC_LABEL_STRING
+        description: "Return status of the storage operation"
+      }
+      metric_labels: {
+        source_name: "volume_plugin"
+        type: METRIC_LABEL_STRING
+        description: "Name of the volume plugin executing the storage operation"
+      }
+      description: "Count of storage operation statuses.\nstatus(String): The return status of the operation.\nvolume_plugin(String): The volume plugin of the operation.\noperation_name(String): The name of the operation."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "evictions"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/evictions"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "eviction_signal"
+        type: METRIC_LABEL_STRING
+        description: "The signal that triggered the eviction."
+      }
+      description: "Counter that tracks the cumulative number of pod evictions initiated by the kubelet, broken down by eviction signal."
+      unit: "1"
+    }
+  kubelet-prober-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "https://${KUBELET_HOST}:10250/metrics/probes"
+      target_name: "kubelet-prober"
+
+      authorization: {
+        type: "Bearer"
+        credentials_file: "/var/run/secrets/kubernetes.io/serviceaccount/token"
+        ca_file: "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+      }
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "prober_probe_total"
+      export_metric_name: "kubernetes.io/internal/nodes/kubelet/prober_probe_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "pod_uid"
+        type: METRIC_LABEL_STRING
+        description: "Uid of the pod."
+      }
+      metric_labels: {
+        source_name: "probe_type"
+        type: METRIC_LABEL_STRING
+        description: "Type of the probe, can be either of <Liveness, Readiness>."
+      }
+      metric_labels: {
+        source_name: "result"
+        type: METRIC_LABEL_STRING
+        description: "Result of the probe, can be any of <successful, failed, unknown>."
+      }
+      description: "Cumulative number of a liveness or readiness probe for a container by result."
+      unit: "1"
+      override_labels: {
+        resource_label_target: {
+          name: "namespace_name"
+        }
+        metric_label: {
+          name: "namespace"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "pod_name"
+        }
+        metric_label: {
+          name: "pod"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "container_name"
+        }
+        metric_label: {
+          name: "container"
+        }
+      }
+    }
+  networkpolicy_antrea-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://${HOST_LOOPBACK}:10351"
+      target_name: "networkpolicy_antrea"
+    }
+    export_target:  {
+      endpoint:  "monitoring.googleapis.com:443"
+    }
+    metrics:  {
+      source_metric_name:  "antrea_agent_conntrack_antrea_connection_count"
+      export_metric_name:  "kubernetes.io/internal/addons/networkpolicy_antrea/antrea_agent_conntrack_antrea_connection_count"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_NODE
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_GAUGE
+      description:  "Number of connections in the Antrea ZoneID of the conntrack table. This metric gets updated at an interval specified by flowPollInterval, a configuration parameter for the Agent."
+      unit:  "connections"
+    }
+    metrics:  {
+      source_metric_name:  "antrea_agent_networkpolicy_count"
+      export_metric_name:  "kubernetes.io/internal/addons/networkpolicy_antrea/antrea_agent_networkpolicy_count"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_NODE
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_GAUGE
+      description:  "Number of NetworkPolicies on local Node which are managed by the Antrea Agent."
+      unit:  "policies"
+    }
+    metrics:  {
+      source_metric_name:  "antrea_agent_ovs_total_flow_count"
+      export_metric_name:  "kubernetes.io/internal/addons/networkpolicy_antrea/antrea_agent_ovs_total_flow_count"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_NODE
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_GAUGE
+      description:  "Total flow count of all OVS flow tables."
+      unit:  "flows"
+    }
+  node-problem-detector-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target:  {
+      url:  "http://${HOST_LOOPBACK}:20257/metrics"
+      target_name: "node-problem-detector"
+
+      no_start_time_metric: true
+    }
+    export_target:  {
+      endpoint:  "monitoring.googleapis.com:443"
+    }
+    metrics:  {
+      source_metric_name:  "problem_counter"
+      export_metric_name:  "kubernetes.io/internal/nodes/node_problem_detector/local_ssd_error_count"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_NODE
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "reason"
+        type:  METRIC_LABEL_STRING
+        description:  "The reason of local SSD failure."
+      }
+      description:  "The number of GKE local SSD errors."
+      unit:  "count"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: gke-metrics-agent
+    components.gke.io/component-version: 2.130.29-gke.0
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:11:10Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: prometheus-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "535"
+  uid: 127bbdad-4ba3-4877-8e42-20593a330f57

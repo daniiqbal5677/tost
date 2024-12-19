@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  thanos-objstore.yml: dHlwZTogR0NTCmNvbmZpZzoKICBidWNrZXQ6ICJhZG1mLW5ldy1sb3lhbHR5LXByb2QiCg==
+kind: Secret
+metadata:
+  creationTimestamp: "2024-11-12T03:38:49Z"
+  name: thanos-objstore
+  namespace: kube-system
+  resourceVersion: "26005697"
+  uid: 570cb563-8a86-4a4b-a800-393a3fe39cb6
+type: Opaque

@@ -1,0 +1,40 @@
+apiVersion: v1
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    MIIELTCCApWgAwIBAgIRAKaFKVNnwFGdkfy8AwR1ElMwDQYJKoZIhvcNAQELBQAw
+    LzEtMCsGA1UEAxMkNDFhYzk4M2EtNTNhMi00ODZiLWI5NDgtNWUyNzc4MTI3ZWY4
+    MCAXDTI0MTAxODA2MDYwNVoYDzIwNTQxMDExMDcwNjA1WjAvMS0wKwYDVQQDEyQ0
+    MWFjOTgzYS01M2EyLTQ4NmItYjk0OC01ZTI3NzgxMjdlZjgwggGiMA0GCSqGSIb3
+    DQEBAQUAA4IBjwAwggGKAoIBgQCWmbDRqOtQM+8d7183ZA478Jf87QVBAlmcgU72
+    KRJOSAeWN5zjjaxos26gM9R9QWQYrEcYq/a7xB6zK9gHZMsPbWfYzfQmwMPu3U7w
+    XNwfoZsjNGFk50zDyL2d/yuJEzDumS5sdfC1z5P8w6Ulkb4p6mL5z65Vic5KjWAt
+    y4OlIAnIBCpk2ca24FjC6y2gINjczu0EYABJ+dQpZEncqcG7WN9Ytx4SlpTxl/qs
+    Ma91e6uwrWF1+99noppsxFJDyB553WkjAdyVuCQ93iqudfljUESGZrjQvUOGSwjN
+    irUoNOKKdeJAsih8kIWiS4IDW4xHKRwPKzpyCY5FoUF87WMnbRFpJzPCjQasAho3
+    YNPzkqyznlnLh+xfGsFSA0uUJnX9XlxGczaJcyxl1NfXGvzHq7h/TW91kobnLES6
+    N2ocgF+gTqOVL7QQrtph42OSqdRqj7rFAlgEJayTcF97oVTJG4rUpc8HCH5uSIuA
+    e+B16z3WpXMCtqyrQUGtNW/nxtkCAwEAAaNCMEAwDgYDVR0PAQH/BAQDAgIEMA8G
+    A1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFGqYou4BxAQJuHrOKoi/4jdZfafhMA0G
+    CSqGSIb3DQEBCwUAA4IBgQAdQ5vwBcSF+iBtzgZf1q1LCo+IWK3Y5Q0d0hJrK2XS
+    P+rQ4VeY/7gkvjQL36ci2ISLXcDBHM/rH1MeVSSCfuYmckWrGPLkFAjYw02p4dUR
+    LbQEEcua1UG6FLkPP9vmd1iNtvVeZ9gyPhtFMSQkHLdm/RpFsofypMxKL4Tq6ZET
+    7nF03bTbKdpi6rHLCr3sIV20tTTL0e/Ax06//zQctweL+U1jJCGv0PTjtcKpGFhZ
+    h+GCaAH5y4gA9rTamhB/WlHXzcJJOWDzXJRcTcVcWgu7imhaI43jmMkqrjpxxYxp
+    Enx+SPLeyQkJZiLAJ8ZOu+TCFnvHM4GZ5ibMbB9jvz0MtkmBj4hb0Zc2bdCRCFe/
+    +xl6E9pXzIKDBMK89MiaaBKDc0tfSK6KKf3U3o/9dJ0FFYpL3KxxNNpHQlURZaXu
+    cB4PWJxdRcxOdnhHICoMUDdeiLrVAZbVTHrU6wxCkbrubzcB+2Z3mzjWlSNBzGNP
+    D6oNbsf0xr5R698G4tCqw4g=
+    -----END CERTIFICATE-----
+kind: ConfigMap
+metadata:
+  annotations:
+    kubernetes.io/description: Contains a CA bundle that can be used to verify the
+      kube-apiserver when using internal endpoints such as the internal service IP
+      or kubernetes.default.svc. No other usage is guaranteed across distributions
+      of Kubernetes clusters.
+  creationTimestamp: "2024-10-18T07:10:49Z"
+  name: kube-root-ca.crt
+  namespace: kube-node-lease
+  resourceVersion: "266"
+  uid: 63d2d3bd-f862-4044-91e3-9b1e3b5e3697

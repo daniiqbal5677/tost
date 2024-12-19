@@ -1,0 +1,68 @@
+apiVersion: v1
+data:
+  ksm-metrics-collector-config-data: |-
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://127.0.0.1:8081/metrics"
+      target_name: "kube-state-metrics"
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "kube_state_metrics_watch_total"
+      export_metric_name: "kubernetes.io/internal/addons/cluster_infra_metrics/kube_state_metrics_watch_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "resource"
+        type: METRIC_LABEL_STRING
+        description: "K8S API object resource."
+      }
+      metric_labels: {
+        source_name: "result"
+        type: METRIC_LABEL_STRING
+        description: "list operation result: success or error."
+      }
+      description: "Number of total resource watches in kube-state-metrics."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "kube_state_metrics_list_total"
+      export_metric_name: "kubernetes.io/internal/addons/cluster_infra_metrics/kube_state_metrics_list_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "resource"
+        type: METRIC_LABEL_STRING
+        description: "K8S API object resource."
+      }
+      metric_labels: {
+        source_name: "result"
+        type: METRIC_LABEL_STRING
+        description: "list operation result: success or error."
+      }
+      description: "Number of total resource lists in kube-state-metrics."
+      unit: "1"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: cluster-infra-metrics
+    components.gke.io/component-version: 1.30.1-gke.4
+  creationTimestamp: "2024-10-18T07:10:59Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: ksm-metrics-collector-config-map
+  namespace: gke-managed-cim
+  resourceVersion: "27685455"
+  uid: eede735f-2fbc-423e-ab97-5b071911dbfc

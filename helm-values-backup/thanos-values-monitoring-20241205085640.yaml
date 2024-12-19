@@ -1,0 +1,41 @@
+compactor:
+  enabled: true
+metrics:
+  enabled: true
+objstoreConfig: |-
+  type: GCS
+  config:
+    bucket: "admf-new-loyalty-prod"
+query:
+  enabled: true
+  replicaCount: 1
+  resources:
+    limits:
+      memory: 6Gi
+    requests:
+      cpu: 500m
+      memory: 2Gi
+  stores:
+  - prometheus-prometheus-thanos.monitoring:10901
+queryFrontend:
+  enabled: true
+  replicaCount: 1
+  resources:
+    limits:
+      memory: 6Gi
+    requests:
+      cpu: 500m
+      memory: 2Gi
+receive:
+  enabled: true
+  replicaCount: 1
+  replicaLabel: replica
+storegateway:
+  enabled: true
+  replicaCount: 1
+  resources:
+    limits:
+      memory: 8Gi
+    requests:
+      cpu: "1"
+      memory: 6Gi

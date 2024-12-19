@@ -1,0 +1,15 @@
+architecture: standalone
+auth:
+  enabled: false
+commonConfiguration: |-
+  appendonly yes
+  save ""
+master:
+  persistence:
+    existingClaim: pvc-redis
+  resourcesPreset: large
+metrics:
+  enabled: true
+  prometheusRule:
+    enabled: true
+    rules: []

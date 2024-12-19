@@ -1,0 +1,60 @@
+apiVersion: v1
+data:
+  cilium_health_max_wait_time_seconds: "600"
+  cilium_watchdog_failure_retry_seconds: "60"
+  cilium_watchdog_fast_start_wait_seconds: "60"
+  cilium_watchdog_success_wait_seconds: "300"
+  cni_spec_ipv6_route: '{"dst": "::/0"}'
+  cni_spec_name: 10-gke-ptp.conflist
+  cni_spec_template: |-
+    {
+      "name": "gke-pod-network",
+      "cniVersion": "0.3.1",
+      "plugins": [
+        {
+          "type": "gke",
+          "mtu": @mtu,
+          "ipam": {
+            "type": "host-local",
+            "ranges": [
+              @ipv4Subnet@ipv6SubnetOptional
+            ],
+            "routes": [
+              {"dst": "0.0.0.0/0"}@ipv6RouteOptional
+            ]
+          }
+        },
+        {
+          "type": "portmap",
+          "capabilities": {
+            "portMappings": true
+          }
+        },
+        {
+          "type": "bandwidth",
+          "capabilities": {
+            "bandwidth": true
+          }
+        }@cniCiliumPlugin@cniIstioPlugin
+      ]
+    }
+  enable_bandwidth_plugin: "false"
+  enable_calico_network_policy: "false"
+  enable_cilium_plugin: "false"
+  enable_ipv6: "false"
+  enable_policy_routing: "false"
+  master_ip: 10.121.246.39
+  reconcile_interval_seconds: 60s
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: netd-combined
+    components.gke.io/component-version: 10.7.3
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:59:40Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: netd-config
+  namespace: kube-system
+  resourceVersion: "33350"
+  uid: 1c28a163-7681-4b5e-bed1-61b1e8cfa970

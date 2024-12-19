@@ -1,0 +1,142 @@
+Backup Secret dimulai pada Thu Dec  5 08:19:43 UTC 2024
+Mencadangkan Secret: alertmanager dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/secret-backup/gmp-system-alertmanager-20241205081943.yaml
+Mencadangkan Secret: collection dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/secret-backup/gmp-system-collection-20241205081943.yaml
+Mencadangkan Secret: rules dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/secret-backup/gmp-system-rules-20241205081943.yaml
+Mencadangkan Secret: webhook-tls dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/secret-backup/gmp-system-webhook-tls-20241205081943.yaml
+Mencadangkan Secret: admin-ui-nginx-ingress-nginx-admission dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-admin-ui-nginx-ingress-nginx-admission-20241205081943.yaml
+Mencadangkan Secret: api-nginx-ingress-nginx-admission dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-api-nginx-ingress-nginx-admission-20241205081943.yaml
+Mencadangkan Secret: grafana-nginx-ingress-nginx-admission dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-grafana-nginx-ingress-nginx-admission-20241205081943.yaml
+Mencadangkan Secret: ingress-nginx-admission dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-ingress-nginx-admission-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.admin-ui-nginx.v1 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.admin-ui-nginx.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.admin-ui-nginx.v2 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.admin-ui-nginx.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v1 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v2 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v3 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v3-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v4 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v4-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v5 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v5-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.api-nginx.v6 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.api-nginx.v6-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.grafana-nginx.v1 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.grafana-nginx.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.grafana-nginx.v2 dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/secret-backup/ingress-nginx-sh.helm.release.v1.grafana-nginx.v2-20241205081943.yaml
+Mencadangkan Secret: clusteradmin dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/secret-backup/kube-system-clusteradmin-20241205081943.yaml
+Mencadangkan Secret: clusterviewer dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/secret-backup/kube-system-clusterviewer-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.vpa.v1 dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/secret-backup/kube-system-sh.helm.release.v1.vpa.v1-20241205081943.yaml
+Mencadangkan Secret: thanos-objstore dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/secret-backup/kube-system-thanos-objstore-20241205081943.yaml
+Mencadangkan Secret: adira-translator-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-adira-translator-env-20241205081943.yaml
+Mencadangkan Secret: admin-ui-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-admin-ui-env-20241205081943.yaml
+Mencadangkan Secret: api-gateway-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-api-gateway-env-20241205081943.yaml
+Mencadangkan Secret: identity-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-identity-env-20241205081943.yaml
+Mencadangkan Secret: membership-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-membership-env-20241205081943.yaml
+Mencadangkan Secret: membership-event-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-membership-event-env-20241205081943.yaml
+Mencadangkan Secret: notification-api-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-notification-api-env-20241205081943.yaml
+Mencadangkan Secret: notification-worker-email-sync-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-notification-worker-email-sync-env-20241205081943.yaml
+Mencadangkan Secret: scheduler-distributed-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-scheduler-distributed-env-20241205081943.yaml
+Mencadangkan Secret: scheduler-distributed-updater-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-scheduler-distributed-updater-env-20241205081943.yaml
+Mencadangkan Secret: scheduler-distributed-updater-proxy-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-scheduler-distributed-updater-proxy-env-20241205081943.yaml
+Mencadangkan Secret: worker-child-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-worker-child-env-20241205081943.yaml
+Mencadangkan Secret: worker-father-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-worker-father-env-20241205081943.yaml
+Mencadangkan Secret: worker-mother-env dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/secret-backup/loyalty-prod-worker-mother-env-20241205081943.yaml
+Mencadangkan Secret: alertmanager-prometheus-alertmanager dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-alertmanager-prometheus-alertmanager-20241205081943.yaml
+Mencadangkan Secret: alertmanager-prometheus-alertmanager-generated dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-alertmanager-prometheus-alertmanager-generated-20241205081943.yaml
+Mencadangkan Secret: alertmanager-prometheus-alertmanager-tls-assets-0 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-alertmanager-prometheus-alertmanager-tls-assets-0-20241205081943.yaml
+Mencadangkan Secret: alertmanager-prometheus-alertmanager-web-config dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-alertmanager-prometheus-alertmanager-web-config-20241205081943.yaml
+Mencadangkan Secret: grafana dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-grafana-20241205081943.yaml
+Mencadangkan Secret: loki-single dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-loki-single-20241205081943.yaml
+Mencadangkan Secret: loki-single-promtail dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-loki-single-promtail-20241205081943.yaml
+Mencadangkan Secret: prometheus-prometheus-prometheus dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-prometheus-prometheus-prometheus-20241205081943.yaml
+Mencadangkan Secret: prometheus-prometheus-prometheus-thanos-prometheus-http-client-file dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-prometheus-prometheus-prometheus-thanos-prometheus-http-client-file-20241205081943.yaml
+Mencadangkan Secret: prometheus-prometheus-prometheus-tls-assets-0 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-prometheus-prometheus-prometheus-tls-assets-0-20241205081943.yaml
+Mencadangkan Secret: prometheus-prometheus-prometheus-web-config dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-prometheus-prometheus-prometheus-web-config-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.grafana.v1 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.grafana.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.grafana.v2 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.grafana.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.grafana.v3 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.grafana.v3-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v1 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v2 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v3 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v3-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v4 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v4-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v5 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v5-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.loki-single.v6 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.loki-single.v6-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.prometheus.v1 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.prometheus.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.prometheus.v2 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.prometheus.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.prometheus.v3 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.prometheus.v3-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.prometheus.v4 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.prometheus.v4-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.thanos.v1 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.thanos.v1-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.thanos.v2 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.thanos.v2-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.thanos.v3 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.thanos.v3-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.vpa.v1 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-sh.helm.release.v1.vpa.v1-20241205081943.yaml
+Mencadangkan Secret: thanos-objstore dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-thanos-objstore-20241205081943.yaml
+Mencadangkan Secret: thanos-objstore-secret dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-thanos-objstore-secret-20241205081943.yaml
+Mencadangkan Secret: vpa-tls-secret dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/secret-backup/monitoring-vpa-tls-secret-20241205081943.yaml
+Mencadangkan Secret: prod-db-credentials dari namespace: prod
+Backup sukses: /home/newloyalty/backup/secret-backup/prod-prod-db-credentials-20241205081943.yaml
+Mencadangkan Secret: prod-db-sa-key dari namespace: prod
+Backup sukses: /home/newloyalty/backup/secret-backup/prod-prod-db-sa-key-20241205081943.yaml
+Mencadangkan Secret: sh.helm.release.v1.redis-standalone.v1 dari namespace: prod
+Backup sukses: /home/newloyalty/backup/secret-backup/prod-sh.helm.release.v1.redis-standalone.v1-20241205081943.yaml
+Backup Secret selesai pada Thu Dec  5 08:19:53 UTC 2024

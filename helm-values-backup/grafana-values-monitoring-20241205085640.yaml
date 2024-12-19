@@ -1,0 +1,54 @@
+adminPassword: tada-adira-grafana-admin
+adminUser: grafana-admin
+assertNoLeakedSecrets: false
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+    - jsonData:
+        httpMethod: GET
+      name: Prometheus
+      type: prometheus
+      uid: prometheus
+      url: http://prometheus-prometheus.monitoring:9090
+    - access: proxy
+      isDefault: true
+      name: Thanos
+      type: prometheus
+      uid: thanos
+      url: http://thanos-query-frontend.monitoring:9090
+    - access: proxy
+      jsonData:
+        maxLines: 1000
+        timeout: 300
+      name: Loki
+      type: loki
+      uid: loki
+      url: http://loki-single.monitoring:3100/
+    deleteDatasources: null
+grafana.ini:
+  server:
+    domain: grafana-loyalty.adira.co.id
+    enable_gzip: true
+    enforce_domain: false
+    root_url: https://grafana-loyalty.adira.co.id
+  smtp:
+    enabled: false
+  users:
+    viewers_can_edit: true
+ingress:
+  enabled: true
+  hosts:
+  - grafana-loyalty.adira.co.id
+  ingressClassName: grafana-nginx
+persistence:
+  inMemory:
+    enabled: true
+plugins:
+- redis-datasource
+resources:
+  requests:
+    cpu: 500m
+    memory: 1024Mi
+serviceMonitor:
+  enabled: true

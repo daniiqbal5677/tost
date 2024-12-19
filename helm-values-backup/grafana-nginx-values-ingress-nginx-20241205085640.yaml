@@ -1,0 +1,24 @@
+commonLabels:
+  cluster: production-loyalty
+  vendor: tada
+controller:
+  ingressClass: grafana-nginx
+  ingressClassResource:
+    controllerValue: k8s.io/grafana-ingress-nginx
+    default: false
+    enabled: true
+    name: grafana-nginx
+  metrics:
+    enabled: true
+    serviceMonitor:
+      additionalLabels:
+        release: prometheus
+      enabled: true
+  service:
+    annotations:
+      cloud.google.com/load-balancer-type: Internal
+      cloud.google.com/neg: '{"exposed_ports":{"80":{"name":"ingress-nginx-internal-80-neg-http"}}}'
+      networking.gke.io/load-balancer-type: Internal
+defaultBackend:
+  enabled: false
+fullNameOverride: grafana-nginx

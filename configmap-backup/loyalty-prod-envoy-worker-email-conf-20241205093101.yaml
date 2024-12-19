@@ -1,0 +1,69 @@
+apiVersion: v1
+data:
+  envoy.yaml: |
+    static_resources:
+      listeners:
+      - name: listener_0
+        address:
+          socket_address:
+            address: 0.0.0.0
+            port_value: 8443
+        filter_chains:
+        - filters:
+          - name: envoy.filters.network.http_connection_manager
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+              access_log:
+              - name: envoy.access_loggers.stdout
+                typed_config:
+                  "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+              codec_type: AUTO
+              stat_prefix: ingress_http
+              route_config:
+                name: local_route
+                virtual_hosts:
+                - name: local_service
+                  domains:
+                  - "*"
+                  routes:
+                  - match:
+                      prefix: "/"
+                    route:
+                      cluster: grpc_backend
+                      max_grpc_timeout: 2s
+              http_filters:
+                - name: envoy.filters.http.router
+                  typed_config:
+                    "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      clusters:
+      - name: grpc_backend
+        connect_timeout: 0.5s
+        type: STRICT_DNS
+        dns_lookup_family: V4_ONLY
+        lb_policy: ROUND_ROBIN
+        http2_protocol_options: {}
+        load_assignment:
+          cluster_name: grpc_backend
+          endpoints:
+          - lb_endpoints:
+            - endpoint:
+                address:
+                  socket_address:
+                    address: notification-worker-api-service.loyalty-prod.svc.cluster.local
+                    port_value: 9443
+    admin:
+      access_log_path: /dev/stdout
+      address:
+        socket_address:
+          address: 127.0.0.1
+          port_value: 8090
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"envoy.yaml":"static_resources:\n  listeners:\n  - name: listener_0\n    address:\n      socket_address:\n        address: 0.0.0.0\n        port_value: 8443\n    filter_chains:\n    - filters:\n      - name: envoy.filters.network.http_connection_manager\n        typed_config:\n          \"@type\": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager\n          access_log:\n          - name: envoy.access_loggers.stdout\n            typed_config:\n              \"@type\": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog\n          codec_type: AUTO\n          stat_prefix: ingress_http\n          route_config:\n            name: local_route\n            virtual_hosts:\n            - name: local_service\n              domains:\n              - \"*\"\n              routes:\n              - match:\n                  prefix: \"/\"\n                route:\n                  cluster: grpc_backend\n                  max_grpc_timeout: 2s\n          http_filters:\n            - name: envoy.filters.http.router\n              typed_config:\n                \"@type\": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router\n  clusters:\n  - name: grpc_backend\n    connect_timeout: 0.5s\n    type: STRICT_DNS\n    dns_lookup_family: V4_ONLY\n    lb_policy: ROUND_ROBIN\n    http2_protocol_options: {}\n    load_assignment:\n      cluster_name: grpc_backend\n      endpoints:\n      - lb_endpoints:\n        - endpoint:\n            address:\n              socket_address:\n                address: notification-worker-api-service.loyalty-prod.svc.cluster.local\n                port_value: 9443\nadmin:\n  access_log_path: /dev/stdout\n  address:\n    socket_address:\n      address: 127.0.0.1\n      port_value: 8090\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"envoy-worker-email-conf","namespace":"loyalty-prod"}}
+  creationTimestamp: "2024-11-14T01:51:20Z"
+  name: envoy-worker-email-conf
+  namespace: loyalty-prod
+  resourceVersion: "28056144"
+  uid: 8a597039-4ecc-4997-a51f-96ed5a640ccb

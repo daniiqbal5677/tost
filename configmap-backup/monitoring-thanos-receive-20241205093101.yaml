@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  hashrings.json: |-
+    [
+      {
+        "endpoints": [
+            "127.0.0.1:10901"
+        ]
+      }
+    ]
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: thanos
+    meta.helm.sh/release-namespace: monitoring
+  creationTimestamp: "2024-11-12T03:31:25Z"
+  labels:
+    app.kubernetes.io/component: receive
+    app.kubernetes.io/instance: thanos
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: thanos
+    app.kubernetes.io/version: 0.36.1
+    helm.sh/chart: thanos-15.8.1
+  name: thanos-receive
+  namespace: monitoring
+  resourceVersion: "26000016"
+  uid: 5104f7c6-6d4c-4a8c-8e88-87ddd1202118

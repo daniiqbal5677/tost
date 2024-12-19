@@ -1,0 +1,111 @@
+apiVersion: v1
+data:
+  kubedns-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://127.0.0.1:10055/metrics"
+      target_name: "kubedns"
+    }
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "skydns_skydns_dns_request_count_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_request_count_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "system"
+        type: METRIC_LABEL_STRING
+        description: "Name of the system handling the query - cache, stub, recursive..."
+      }
+      description: "Counter of DNS requests made."
+      unit: "{requests}"
+    }
+    metrics: {
+      source_metric_name: "skydns_skydns_dns_request_duration_seconds"
+      export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_request_duration_seconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "system"
+        type: METRIC_LABEL_STRING
+        description: "Name of the system handling the query - cache, stub, recursive..."
+      }
+      description: "Histogram of the time (in seconds) each request took to resolve."
+      unit: "s"
+    }
+    metrics: {
+      source_metric_name: "skydns_skydns_dns_response_size_bytes"
+      export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_response_size_bytes"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "system"
+        type: METRIC_LABEL_STRING
+        description: "Name of the system handling the query - cache, stub, recursive..."
+      }
+      description: "Size of the returns response in bytes."
+      unit: "By"
+    }
+    metrics: {
+      source_metric_name: "skydns_skydns_dns_error_count_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_error_count_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "cause"
+        type: METRIC_LABEL_STRING
+        description: "Cause of the error."
+      }
+      metric_labels: {
+        source_name: "system"
+        type: METRIC_LABEL_STRING
+        description: "Name of the system handling the query - cache, stub, recursive..."
+      }
+      description: "Counter of DNS requests resulting in an error."
+      unit: "{requests}"
+    }
+    metrics: {
+      source_metric_name: "skydns_skydns_dns_cachemiss_count_total"
+      export_metric_name: "kubernetes.io/internal/addons/kubedns/skydns_dns_cachemiss_count_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "cache"
+        type: METRIC_LABEL_STRING
+        description: "Type of cache - DNSSec cache or Responses cache."
+      }
+      description: "Counter of DNS requests that result in a cache miss."
+      unit: "{requests}"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: kubedns
+    components.gke.io/component-version: 1.9.0-gke.101
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:11:18Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: kubedns-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "667"
+  uid: 14c5ec6b-f090-455b-8000-578a01f13f27

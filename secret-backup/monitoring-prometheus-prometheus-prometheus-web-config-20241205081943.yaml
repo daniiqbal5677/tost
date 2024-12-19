@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  web-config.yaml: ""
+kind: Secret
+metadata:
+  creationTimestamp: "2024-11-07T03:02:44Z"
+  labels:
+    managed-by: prometheus-operator
+  name: prometheus-prometheus-prometheus-web-config
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: monitoring.coreos.com/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Prometheus
+    name: prometheus-prometheus
+    uid: eb85a259-4629-495d-9b99-a9d3d1da0be7
+  resourceVersion: "20716833"
+  uid: cb1d35a2-1b2f-4ff4-a8ff-46c8cf576562
+type: Opaque

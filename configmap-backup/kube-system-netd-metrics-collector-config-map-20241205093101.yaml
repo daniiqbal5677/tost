@@ -1,0 +1,300 @@
+apiVersion: v1
+data:
+  netd-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+    # Netd is an open-source component, and is an exception for using a sidecar for metrics collection to keep netd start time short.
+
+    scrape_target: {
+      target_name: "netd"
+      url: "http://${METRICS_ADDRESS}/metrics"
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+    metrics: {
+      source_metric_name: "conntrack_entries"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_entries"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Number of currently allocated flow entries for connection tracking."
+      unit: "{entries}"
+    }
+    metrics: {
+      source_metric_name: "conntrack_error_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_error_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      metric_labels: {
+        source_name: "type"
+        type: METRIC_LABEL_STRING
+        description: "The type of error"
+      }
+      description: "Conntrack error counters."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "conntrack_size"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/conntrack_size"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Size of connection tracking table."
+      unit: "{entries}"
+    }
+    metrics: {
+      source_metric_name: "num_inuse_sockets"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/num_inuse_sockets"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "protocol"
+        type: METRIC_LABEL_STRING
+        description: "Socket protocol type"
+      }
+      description: "Number of inuse sockets."
+      unit: "{sockets}"
+    }
+    metrics: {
+      source_metric_name: "num_tw_sockets"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/num_tw_sockets"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Number of sockets in time wait state."
+      unit: "{sockets}"
+    }
+    metrics: {
+      source_metric_name: "socket_memory"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/socket_memory"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Amount of memory used by sockets."
+      unit: "bytes"
+    }
+    metrics: {
+      source_metric_name: "tcp_timeout_rehash_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_timeout_rehash_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Tcp timeout rehash total."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "tcp_duplicate_rehash_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_duplicate_rehash_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Tcp duplicate rehash total."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "tcp_segments_received_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_received_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Total TCP segments received on the node."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "tcp_segments_sent_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_sent_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Total TCP segments sent from node."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "tcp_segments_retransmitted_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/tcp_segments_retransmitted_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Total TCP segments retransmitted on the node."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "used_ipv4_addr_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/used_ipv4_addr_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates how many IPv4 addresses are in use on the node."
+      unit: "{ipv4_addresses}"
+    }
+    metrics: {
+      source_metric_name: "used_ipv6_addr_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/used_ipv6_addr_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates how many IPv6 addresses are in use on the node."
+      unit: "{ipv6_addresses}"
+    }
+    metrics: {
+      source_metric_name: "dual_stack_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/dual_stack_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates how many pods have dual stack IP addresses."
+      unit: "{dual_stack}"
+    }
+    metrics: {
+      source_metric_name: "dual_stack_error_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/dual_stack_error_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates how many pods did not get dual stack IPs erroneously."
+      unit: "{dual_stack_errors}"
+    }
+    metrics: {
+      source_metric_name: "ip_reuse_minimum_time_milliseconds"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_minimum_time_milliseconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates the minimum IP reuse time."
+      unit: "milliseconds"
+    }
+    metrics: {
+      source_metric_name: "ip_reuse_average_time_milliseconds"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_average_time_milliseconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DOUBLE
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates the average IP reuse time."
+      unit: "milliseconds"
+    }
+    metrics: {
+      source_metric_name: "ip_reuse_time_duration_milliseconds"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/ip_reuse_time_duration_milliseconds"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_DISTRIBUTION
+      metric_kind: METRIC_KIND_CUMULATIVE
+      description: "Indicates the IP reuse duration in millisecond for all IPs."
+      unit: "milliseconds"
+    }
+    metrics: {
+      source_metric_name: "active_tcp_connections"
+      export_metric_name: "kubernetes.io/internal/net/cluster/pod/active_tcp_connections"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_POD
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "pod_name"
+        type: METRIC_LABEL_STRING
+        description: "pod name"
+      }
+      metric_labels: {
+        source_name: "namespace_name"
+        type: METRIC_LABEL_STRING
+        description: "namespace name"
+      }
+      description: "Active TCP connections on a pod."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "active_tcp_retransmits"
+      export_metric_name: "kubernetes.io/internal/net/cluster/pod/active_tcp_retransmits"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_POD
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "pod_name"
+        type: METRIC_LABEL_STRING
+        description: "pod name"
+      }
+      metric_labels: {
+        source_name: "namespace_name"
+        type: METRIC_LABEL_STRING
+        description: "namespace name"
+      }
+      description: "Current number of TCP retransmits on a pod from active tcp connections."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "ipv4_assigned_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/ipv4_assigned_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates the total IPv4 IPs assigned to the subnetwork."
+      unit: "1"
+    }
+    metrics: {
+      source_metric_name: "ipv6_assigned_count"
+      export_metric_name: "kubernetes.io/internal/net/cluster/node/ipv6_assigned_count"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      description: "Indicates the total IPv6 IPs assigned to the subnetwork."
+      unit: "1"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: netd-combined
+    components.gke.io/component-version: 10.7.3
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:59:42Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: netd-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "33378"
+  uid: 52475d24-e4c1-42e6-a39b-5cd576f84e11

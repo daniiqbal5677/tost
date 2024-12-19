@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  alertmanager.yaml.gz: H4sIAAAAAAAA/1yOSwrDMAxE9z6FyD7QD934Il0GJRWJixwFWU7p7YsSGkq9Gp6ZNxpZeuQYAJSK8EqdpUxSLcItB6WB0kpaYmhhxkwRmrkyN0GlGnltVKlL1789t/CU/mBpNtIVeTN94QuTRbieyra42w+po4XQfqrny+TY18o+kdGGyaM/ZFLbD7s7f8i4/fyrPwEAAP//w7bNaOcAAAA=
+kind: Secret
+metadata:
+  creationTimestamp: "2024-11-07T03:02:44Z"
+  labels:
+    managed-by: prometheus-operator
+  name: alertmanager-prometheus-alertmanager-generated
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: monitoring.coreos.com/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Alertmanager
+    name: prometheus-alertmanager
+    uid: c54f76ac-0ae0-4f56-8e91-2a6ebccc1a6a
+  resourceVersion: "20716835"
+  uid: d7358e5e-0c70-4141-b49d-9224a546d138
+type: Opaque

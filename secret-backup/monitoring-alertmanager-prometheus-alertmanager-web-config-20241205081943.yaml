@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  web-config.yaml: ""
+kind: Secret
+metadata:
+  creationTimestamp: "2024-11-07T03:02:44Z"
+  labels:
+    managed-by: prometheus-operator
+  name: alertmanager-prometheus-alertmanager-web-config
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: monitoring.coreos.com/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Alertmanager
+    name: prometheus-alertmanager
+    uid: c54f76ac-0ae0-4f56-8e91-2a6ebccc1a6a
+  resourceVersion: "20716840"
+  uid: 9e333045-0529-4a5b-a8d5-1b3d7f1fde9d
+type: Opaque

@@ -1,0 +1,73 @@
+apiVersion: v1
+data:
+  filestorecsi-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target:  {
+      url:  "http://127.0.0.1:990/metrics"
+      target_name: "gcp-filestore-driver"
+    }
+    export_target:  {
+      endpoint:  "monitoring.googleapis.com:443"
+    }
+    metrics:  {
+      source_metric_name:  "filestorecsi_lock_release_count"
+      export_metric_name:  "kubernetes.io/internal/addons/filestorecsi/nfs_lock_release_count"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "status_code"
+        type:  METRIC_LABEL_STRING
+        description:  "status_code"
+      }
+      description:  "Count of driver initiated filestore lock release operations. 'status_code' indicates whether an operation was successful or failed."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "filestorecsi_kube_api_duration_seconds"
+      export_metric_name:  "kubernetes.io/internal/addons/filestorecsi/kube_api_duration_seconds"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_DISTRIBUTION
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "op_source"
+        type:  METRIC_LABEL_STRING
+        description:  "op_source"
+      }
+      metric_labels:  {
+        source_name:  "op_status_code"
+        type:  METRIC_LABEL_STRING
+        description:  "op_status_code"
+      }
+      metric_labels:  {
+        source_name:  "op_type"
+        type:  METRIC_LABEL_STRING
+        description:  "op_type"
+      }
+      metric_labels:  {
+        source_name:  "resource_type"
+        type:  METRIC_LABEL_STRING
+        description:  "resource_type"
+      }
+      description:  "Duration of node driver container initiated k8s API operations. 'op_status_code' indicates whether an operation was successful or failed, resource_type indicates the type of k8s resource (e.g. 'ConfigMap' or 'Node'), 'op_source' indicates the CSI operation which initiated the k8s API operation (e.g 'node_stage_volume', 'node_unstage_volume', or 'lock_release_reconcile'), 'op_type' indicates the type of k8s API operation (e.g. 'Get','List', 'Update', or 'Create')."
+      unit:  "1"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: filestorecsi
+    components.gke.io/component-version: 0.13.31
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:59:24Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: filestorecsi-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "27685555"
+  uid: 5da92b76-d268-448b-a753-89ba4e501d14

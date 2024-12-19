@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  config.yaml: |
+    global: {}
+    alerting:
+        alertmanagers:
+            - follow_redirects: true
+              enable_http2: true
+              scheme: http
+              timeout: 10s
+              api_version: v2
+              static_configs:
+                - targets:
+                    - alertmanager.gmp-system:9093
+    rule_files:
+        - /etc/rules/*.yaml
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-10-18T07:12:42Z"
+  name: rule-evaluator
+  namespace: gmp-system
+  resourceVersion: "1940"
+  uid: 6dfe1659-7e38-4727-be3b-1c0621020027

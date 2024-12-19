@@ -1,0 +1,22 @@
+apiVersion: v1
+data:
+  prod-redis-standalone-87e6f601-13bb-47d2-938a-fdf7e4e74c27.yaml: |
+    groups:
+    - name: redis-standalone
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-11-15T08:10:11Z"
+  labels:
+    managed-by: prometheus-operator
+    prometheus-name: prometheus-prometheus
+  name: prometheus-prometheus-prometheus-rulefiles-0
+  namespace: monitoring
+  ownerReferences:
+  - apiVersion: monitoring.coreos.com/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Prometheus
+    name: prometheus-prometheus
+    uid: eb85a259-4629-495d-9b99-a9d3d1da0be7
+  resourceVersion: "29497047"
+  uid: 25872c07-5422-47ea-8162-8b0f5bb7ab82

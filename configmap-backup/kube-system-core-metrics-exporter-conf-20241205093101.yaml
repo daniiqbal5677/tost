@@ -1,0 +1,25 @@
+apiVersion: v1
+data:
+  core-metrics-exporter-config: "receivers:\n  kubenode:\n    endpoint: \"https://$KUBELET_HOST:10250\"\n
+    \   scrape_interval: 60s\n    cluster_name: loyalty-prod\n    location: asia-southeast2\n
+    \   node_name: \"$NODE_NAME\"\n    kubernetes_service_host: \"$KUBERNETES_SERVICE_HOST\"\n
+    \   certificate_location: \"/var/run/secrets/kubernetes.io/serviceaccount/ca.crt\"\n
+    \   use_watch: true\nexporters:\n  googlecloud:\n    endpoint: monitoring.googleapis.com:443\n
+    \   timeout: 45s\n    retry_on_failure:\n      enabled: false\n    sending_queue:\n
+    \     enabled: false\n    \n    metric:\n      skip_create_descriptor: true\n
+    \   \nextensions:\n  observability:\n    metrics_export_enabled: false\n  health_check:\n
+    \   endpoint: \"$HOST_LOOPBACK:8203\"\nservice:\n  extensions:\n  - observability\n
+    \ \n  - health_check\n  pipelines:\n    metrics/kube:\n        receivers:\n          -
+    kubenode\n        exporters:\n          - googlecloud\n"
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: gke-metrics-agent
+    components.gke.io/component-version: 2.130.29-gke.0
+  creationTimestamp: "2024-10-18T07:11:09Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: core-metrics-exporter-conf
+  namespace: kube-system
+  resourceVersion: "521"
+  uid: 2b5e6c47-5366-43b1-9931-009bbba28d76

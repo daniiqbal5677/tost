@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+    components.gke.io/component-name: managed_prometheus
+  creationTimestamp: "2024-10-18T07:12:42Z"
+  labels:
+    app: managed-prometheus-rule-evaluator
+    app.kubernetes.io/name: rule-evaluator
+  name: rules
+  namespace: gmp-system
+  resourceVersion: "1948"
+  uid: e6433f0d-523f-45ca-9c87-12126a17e9c9
+type: Opaque

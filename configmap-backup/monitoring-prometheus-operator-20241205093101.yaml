@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  prometheus-config-reloader: docker.io/bitnami/prometheus-operator:0.78.2-debian-12-r0
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: monitoring
+  creationTimestamp: "2024-11-07T03:02:26Z"
+  labels:
+    app.kubernetes.io/component: operator
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: kube-prometheus
+    app.kubernetes.io/version: 0.78.2
+    helm.sh/chart: kube-prometheus-10.1.0
+  name: prometheus-operator
+  namespace: monitoring
+  resourceVersion: "49657378"
+  uid: d0280000-62e9-4247-b952-d9e80514340c

@@ -1,0 +1,176 @@
+apiVersion: v1
+data:
+  fluentbit-metrics-collector-config-data: |-
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target:  {
+      url:  "http://127.0.0.1:2020/api/v1/metrics/prometheus"
+      target_name:  "fluentbit"
+    }
+    export_target:  {
+      endpoint:  "monitoring.googleapis.com:443"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_input_records_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/input_records_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of the input plugin."
+      }
+      description:  "Number of records read by the input plugin."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_input_bytes_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/input_bytes_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of the input plugin."
+      }
+      description:  "Number of bytes read by the input plugin."
+      unit:  "By"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_build_info"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/fluentbit_build_info"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_GAUGE
+      metric_labels:  {
+        source_name:  "edition"
+        type:  METRIC_LABEL_STRING
+        description:  "Fluentbit edition."
+      }
+      metric_labels:  {
+        source_name:  "version"
+        type:  METRIC_LABEL_STRING
+        description:  "Fluentbit version."
+      }
+      description:  "Build information(version and edition) about open source fluentbit that is running."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_output_proc_records_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_proc_records_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of the output plugin."
+      }
+      description:  "Number of records successfully processed by the output plugin."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_output_proc_bytes_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_proc_bytes_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of the output plugin."
+      }
+      description:  "Number of bytes successfully processed by the output plugin."
+      unit:  "By"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_output_errors_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_errors_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of the output plugin."
+      }
+      description:  "Number of dropped log batches by the output plugin."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_output_retries_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_retries_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of fluent-bit plugin."
+      }
+      description:  "Number of times Fluent Bit retried to send log batches."
+      unit:  "1"
+    }
+    metrics:  {
+      source_metric_name:  "fluentbit_output_retries_failed_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/output_retries_failed_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "Name of fluent-bit plugin."
+      }
+      description:  "Number of dropped log batches due to reaching retry limit."
+      unit:  "1"
+    }
+
+    metrics:  {
+      source_metric_name:  "fluentbit_filter_drop_records_total"
+      export_metric_name:  "kubernetes.io/internal/addons/fluentbit/filter_drop_records_total"
+      resource_metadata:  {
+        metric_schema:  SCHEMA_K8S_CONTAINER
+      }
+      value_type:  VALUE_TYPE_INT64
+      metric_kind:  METRIC_KIND_CUMULATIVE
+      metric_labels:  {
+        source_name:  "name"
+        type:  METRIC_LABEL_STRING
+        description:  "name: the name or alias for the filter instance"
+      }
+      description:  "The number of log records that have been dropped by the filter. This means they removed from the data pipeline."
+      unit:  "1"
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: fluentbit
+    components.gke.io/component-version: 1.30.2-gke.6
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:11:05Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: fluentbit-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "27685584"
+  uid: 1062b2c5-cff4-44b3-b8de-3de0505e401e

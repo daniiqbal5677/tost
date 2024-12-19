@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  empty.yaml: ""
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-10-18T07:12:42Z"
+  labels:
+    app.kubernetes.io/name: rule-evaluator
+  name: rules-generated
+  namespace: gmp-system
+  resourceVersion: "1941"
+  uid: 4b3ba242-6ebd-490c-bca2-6cf1f9d33c30

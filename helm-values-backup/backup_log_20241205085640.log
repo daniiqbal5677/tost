@@ -1,0 +1,22 @@
+Backup Helm Values dimulai pada Thu Dec  5 08:56:40 UTC 2024
+Mencadangkan Helm Values untuk release: admin-ui-nginx di namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/helm-values-backup/admin-ui-nginx-values-ingress-nginx-20241205085640.yaml
+Mencadangkan Helm Values untuk release: api-nginx di namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/helm-values-backup/api-nginx-values-ingress-nginx-20241205085640.yaml
+Mencadangkan Helm Values untuk release: grafana di namespace: monitoring
+Backup sukses: /home/newloyalty/backup/helm-values-backup/grafana-values-monitoring-20241205085640.yaml
+Mencadangkan Helm Values untuk release: grafana-nginx di namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/helm-values-backup/grafana-nginx-values-ingress-nginx-20241205085640.yaml
+Mencadangkan Helm Values untuk release: loki-single di namespace: monitoring
+Backup sukses: /home/newloyalty/backup/helm-values-backup/loki-single-values-monitoring-20241205085640.yaml
+Mencadangkan Helm Values untuk release: prometheus di namespace: monitoring
+Backup sukses: /home/newloyalty/backup/helm-values-backup/prometheus-values-monitoring-20241205085640.yaml
+Mencadangkan Helm Values untuk release: redis-standalone di namespace: prod
+Backup sukses: /home/newloyalty/backup/helm-values-backup/redis-standalone-values-prod-20241205085640.yaml
+Mencadangkan Helm Values untuk release: thanos di namespace: monitoring
+Backup sukses: /home/newloyalty/backup/helm-values-backup/thanos-values-monitoring-20241205085640.yaml
+Mencadangkan Helm Values untuk release: vpa di namespace: kube-system
+Backup sukses: /home/newloyalty/backup/helm-values-backup/vpa-values-kube-system-20241205085640.yaml
+Mencadangkan Helm Values untuk release: vpa di namespace: monitoring
+Backup sukses: /home/newloyalty/backup/helm-values-backup/vpa-values-monitoring-20241205085640.yaml
+Backup Helm Values selesai pada Thu Dec  5 08:56:44 UTC 2024

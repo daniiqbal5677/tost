@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    components.gke.io/component-name: managed_prometheus
+  creationTimestamp: "2024-10-18T07:12:42Z"
+  labels:
+    app.kubernetes.io/name: collector
+  name: collection
+  namespace: gmp-system
+  resourceVersion: "1942"
+  uid: c18a959d-d335-4fbd-92ba-6aea0c1cf993
+type: Opaque

@@ -1,0 +1,105 @@
+apiVersion: v1
+data:
+  status: |
+    time: 2024-12-05 09:30:56.165775851 +0000 UTC
+    autoscalerStatus: Running
+    clusterWide:
+      health:
+        status: Healthy
+        nodeCounts:
+          registered:
+            total: 6
+            ready: 6
+            notStarted: 0
+          longUnregistered: 0
+          unregistered: 0
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-13T17:34:12.077840332Z"
+      scaleUp:
+        status: NoActivity
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-30T17:01:33.244000926Z"
+      scaleDown:
+        status: NoCandidates
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-29T17:11:44.102673731Z"
+    nodeGroups:
+    - name: https://www.googleapis.com/compute/v1/projects/new-loyalty-439001/zones/asia-southeast2-a/instanceGroups/gke-loyalty-prod-pool-1-b726d0f4-grp
+      health:
+        status: Healthy
+        nodeCounts:
+          registered:
+            total: 2
+            ready: 2
+            notStarted: 0
+          longUnregistered: 0
+          unregistered: 0
+        cloudProviderTarget: 2
+        minSize: 1
+        maxSize: 2
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-13T17:34:12.077840332Z"
+      scaleUp:
+        status: NoActivity
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-30T17:01:33.244000926Z"
+      scaleDown:
+        status: NoCandidates
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-29T17:11:44.102673731Z"
+    - name: https://www.googleapis.com/compute/v1/projects/new-loyalty-439001/zones/asia-southeast2-b/instanceGroups/gke-loyalty-prod-pool-1-7249b2a8-grp
+      health:
+        status: Healthy
+        nodeCounts:
+          registered:
+            total: 2
+            ready: 2
+            notStarted: 0
+          longUnregistered: 0
+          unregistered: 0
+        cloudProviderTarget: 2
+        minSize: 1
+        maxSize: 2
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-13T17:34:12.077840332Z"
+      scaleUp:
+        status: NoActivity
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-14T13:25:34.500027684Z"
+      scaleDown:
+        status: NoCandidates
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-14T09:16:53.187209216Z"
+    - name: https://www.googleapis.com/compute/v1/projects/new-loyalty-439001/zones/asia-southeast2-c/instanceGroups/gke-loyalty-prod-pool-1-8991d3cd-grp
+      health:
+        status: Healthy
+        nodeCounts:
+          registered:
+            total: 2
+            ready: 2
+            notStarted: 0
+          longUnregistered: 0
+          unregistered: 0
+        cloudProviderTarget: 2
+        minSize: 1
+        maxSize: 2
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-13T17:34:12.077840332Z"
+      scaleUp:
+        status: NoActivity
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-14T13:26:07.663015971Z"
+      scaleDown:
+        status: NoCandidates
+        lastProbeTime: "2024-12-05T09:30:56.165775851Z"
+        lastTransitionTime: "2024-11-14T09:16:53.187209216Z"
+kind: ConfigMap
+metadata:
+  annotations:
+    cluster-autoscaler.kubernetes.io/last-updated: 2024-12-05 09:30:56.165775851 +0000
+      UTC
+  creationTimestamp: "2024-11-13T17:33:59Z"
+  name: cluster-autoscaler-status
+  namespace: kube-system
+  resourceVersion: "52315727"
+  uid: 9405d55e-06ce-46ca-a82e-bd0319e2fbf2

@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  kubedns.dnsmasq-nanny: gke.gcr.io/k8s-dns-dnsmasq-nanny:1.23.0-gke.9@sha256:8c165a991f95755137077c927455e2d996de2c3d5efb0c369f7d94f8dc7d4fb5
+  kubedns.kube-dns: gke.gcr.io/k8s-dns-kube-dns:1.23.0-gke.9@sha256:48d7e5c5cdd5b356e55c3e61a7ae8f2657f15b661b385639f7b983fe134c0709
+  kubedns.kubedns-metrics-collector: gke.gcr.io/gke-metrics-collector:20240721_2300_RC0@sha256:3d23f78b137bf59ae1a9c71c54daf3186e07640719d1055c4ee84eb251edda64
+  kubedns.prom-to-sd: gke.gcr.io/prometheus-to-sd:v0.11.12-gke.34@sha256:82bdd1d8f1e3bf23b32a27d321a72c5c379c715bc9c9518bb89c992ba743f801
+  kubedns.sidecar: gke.gcr.io/k8s-dns-sidecar:1.23.0-gke.9@sha256:5d99c8b4ffbd794477f16644c3a0e51b79246052c8e4518af0614c3274ff3631
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: kubedns
+    components.gke.io/component-version: 1.9.0-gke.101
+    components.gke.io/image-map: Images deployed by operator
+  creationTimestamp: "2024-10-18T07:11:18Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+    kubedns.cloud.google.com/operator-system: "true"
+  name: kubedns-config-images
+  namespace: kube-system
+  resourceVersion: "664"
+  uid: ef52bcde-3f57-40f9-9b7b-9b6938e87c6f

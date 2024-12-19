@@ -1,0 +1,302 @@
+apiVersion: v1
+data:
+  gpu-device-plugin-metrics-collector-config-data: |
+    # proto-file: cloud/kubernetes/metrics/components/collector/config/collector.proto
+    # proto-message: Config
+
+    scrape_target: {
+      url: "http://127.0.0.1:2112/metrics"
+      target_name: "gpu-device-plugin"
+    }
+
+    export_target: {
+      endpoint: "monitoring.googleapis.com:443"
+    }
+
+    metrics: {
+      source_metric_name: "memory_total"
+      export_metric_name: "kubernetes.io/container/accelerator/memory_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      description: "Total accelerator memory in bytes."
+      unit: "bytes"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "namespace_name"
+        }
+        metric_label: {
+          name: "namespace"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "pod_name"
+        }
+        metric_label: {
+          name: "pod"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "container_name"
+        }
+        metric_label: {
+          name: "container"
+        }
+      }
+    }
+
+    metrics: {
+      source_metric_name: "memory_used"
+      export_metric_name: "kubernetes.io/container/accelerator/memory_used"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      description: "Total accelerator memory allocated in bytes."
+      unit: "bytes"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "namespace_name"
+        }
+        metric_label: {
+          name: "namespace"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "pod_name"
+        }
+        metric_label: {
+          name: "pod"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "container_name"
+        }
+        metric_label: {
+          name: "container"
+        }
+      }
+    }
+
+    metrics: {
+      source_metric_name: "duty_cycle"
+      export_metric_name: "kubernetes.io/container/accelerator/duty_cycle"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      description: "Percent of time over the past sample period (10s) during which the accelerator was actively processing. Values are integers between 0 and 100."
+      unit: "%"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "namespace_name"
+        }
+        metric_label: {
+          name: "namespace"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "pod_name"
+        }
+        metric_label: {
+          name: "pod"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "container_name"
+        }
+        metric_label: {
+          name: "container"
+        }
+      }
+    }
+
+    metrics: {
+      source_metric_name: "memory_total_gpu_node"
+      export_metric_name: "kubernetes.io/node/accelerator/memory_total"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      description: "Total accelerator memory with node in bytes."
+      unit: "bytes"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+    }
+
+    metrics: {
+      source_metric_name: "memory_used_gpu_node"
+      export_metric_name: "kubernetes.io/node/accelerator/memory_used"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      description: "Total accelerator memory allocated with node in bytes."
+      unit: "bytes"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+    }
+
+    metrics: {
+      source_metric_name: "duty_cycle_gpu_node"
+      export_metric_name: "kubernetes.io/node/accelerator/duty_cycle"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_NODE
+      }
+      description: "Total accelerator memory allocated with node in bytes."
+      unit: "bytes"
+      value_type: VALUE_TYPE_DOUBLE
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "make"
+        type: METRIC_LABEL_STRING
+        description: "Make of the accelerator (e.g. nvidia)"
+      }
+      metric_labels: {
+        source_name: "accelerator_id"
+        type: METRIC_LABEL_STRING
+        description: "ID of the accelerator"
+      }
+      metric_labels: {
+        source_name: "model"
+        type: METRIC_LABEL_STRING
+        description: "Model of the accelerator (e.g. Tesla P100)"
+      }
+    }
+
+    metrics: {
+      source_metric_name: "request"
+      export_metric_name: "kubernetes.io/internal/container/accelerator/request"
+      resource_metadata: {
+        metric_schema: SCHEMA_K8S_CONTAINER
+      }
+      description: "Number of accelerator devices requested by the container."
+      unit: "{devices}"
+      value_type: VALUE_TYPE_INT64
+      metric_kind: METRIC_KIND_GAUGE
+      metric_labels: {
+        source_name: "resource_name"
+        type: METRIC_LABEL_STRING
+        description: "Name of the requested accelerator resource."
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "namespace_name"
+        }
+        metric_label: {
+          name: "namespace"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "pod_name"
+        }
+        metric_label: {
+          name: "pod"
+        }
+      }
+      override_labels: {
+        resource_label_target: {
+          name: "container_name"
+        }
+        metric_label: {
+          name: "container"
+        }
+      }
+    }
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: gpu-device-plugin
+    components.gke.io/component-version: 0.1.36
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:11:14Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: nvidia-metrics-collector-config-map
+  namespace: kube-system
+  resourceVersion: "27685702"
+  uid: 6f6b64c2-e0ee-4666-a04d-4220fd363a6f

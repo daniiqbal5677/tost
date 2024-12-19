@@ -1,0 +1,22 @@
+apiVersion: v1
+data:
+  "1733390934314795401": '{"hostname":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","version":"3.0.41"}'
+  "1733390956932413561": '{"hostname":"gke-a0484dbcfc354d6ea01a-bcdb-6875-vm","version":"3.0.41"}'
+  "1733390961229305675": '{"hostname":"gke-a0484dbcfc354d6ea01a-61fd-89a3-vm","version":"3.0.41"}'
+  "1733390964310963299": '{"hostname":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","version":"3.0.41"}'
+  "1733390986933309485": '{"hostname":"gke-a0484dbcfc354d6ea01a-bcdb-6875-vm","version":"3.0.41"}'
+  "1733390991227766901": '{"hostname":"gke-a0484dbcfc354d6ea01a-61fd-89a3-vm","version":"3.0.41"}'
+  "1733390994313326251": '{"hostname":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","version":"3.0.41"}'
+  "1733391016932084130": '{"hostname":"gke-a0484dbcfc354d6ea01a-bcdb-6875-vm","version":"3.0.41"}'
+  "1733391021229900891": '{"hostname":"gke-a0484dbcfc354d6ea01a-61fd-89a3-vm","version":"3.0.41"}'
+  "1733391024310714671": '{"hostname":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","version":"3.0.41"}'
+  "1733391046931739152": '{"hostname":"gke-a0484dbcfc354d6ea01a-bcdb-6875-vm","version":"3.0.41"}'
+  "1733391051228466146": '{"hostname":"gke-a0484dbcfc354d6ea01a-61fd-89a3-vm","version":"3.0.41"}'
+  "1733391054312892243": '{"hostname":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","version":"3.0.41"}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-10-18T07:11:07Z"
+  name: gke-common-webhook-heartbeat
+  namespace: kube-system
+  resourceVersion: "52315701"
+  uid: c5e0f9d6-1054-40b3-9642-d2d0640345da

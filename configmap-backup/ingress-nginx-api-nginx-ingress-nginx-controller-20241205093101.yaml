@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  allow-snippet-annotations: "false"
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: api-nginx
+    meta.helm.sh/release-namespace: ingress-nginx
+  creationTimestamp: "2024-11-13T10:08:12Z"
+  labels:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: api-nginx
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/version: 1.11.3
+    cluster: production-loyalty
+    helm.sh/chart: ingress-nginx-4.11.3
+    vendor: tada
+  name: api-nginx-ingress-nginx-controller
+  namespace: ingress-nginx
+  resourceVersion: "27351052"
+  uid: 1527fa33-ec39-4c34-b9ea-0430ea6da771

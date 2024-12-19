@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  thanos-objstore.yml: dHlwZTogR0NTCmNvbmZpZzoKICBidWNrZXQ6ICJhZG1mLW5ldy1sb3lhbHR5LXByb2QiCg==
+kind: Secret
+metadata:
+  creationTimestamp: "2024-11-12T03:43:30Z"
+  name: thanos-objstore
+  namespace: monitoring
+  resourceVersion: "26010217"
+  uid: 27673a98-e319-4f9c-81da-142ef06ed03a
+type: Opaque

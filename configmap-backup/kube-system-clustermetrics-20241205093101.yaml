@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","leaseDurationSeconds":15,"acquireTime":"2024-11-13T17:25:18Z","renewTime":"2024-12-05T09:31:03Z","leaderTransitions":4}'
+  creationTimestamp: "2024-10-18T07:11:02Z"
+  name: clustermetrics
+  namespace: kube-system
+  resourceVersion: "52315830"
+  uid: b9ad3a64-8f66-44dd-859d-023147c80810

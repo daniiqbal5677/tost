@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"gke-a0484dbcfc354d6ea01a-03de-67d4-vm","leaseDurationSeconds":15,"acquireTime":"2024-11-13T17:25:13Z","renewTime":"2024-12-05T09:31:02Z","leaderTransitions":3}'
+  creationTimestamp: "2024-10-18T07:11:19Z"
+  name: cluster-kubestore
+  namespace: kube-system
+  resourceVersion: "52315807"
+  uid: 0e4f19ce-0b88-4304-8278-ef5b65dc5511

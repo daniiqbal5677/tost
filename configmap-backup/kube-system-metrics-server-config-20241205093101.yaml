@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  NannyConfiguration: |-
+    apiVersion: nannyconfig/v1alpha1
+    kind: NannyConfiguration
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: metrics-server
+    components.gke.io/component-version: 1.30.3-gke.4
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:11:32Z"
+  labels:
+    addonmanager.kubernetes.io/mode: EnsureExists
+    kubernetes.io/cluster-service: "true"
+  name: metrics-server-config
+  namespace: kube-system
+  resourceVersion: "905"
+  uid: c6d4f324-a2c1-413f-b766-a96b6f65d116

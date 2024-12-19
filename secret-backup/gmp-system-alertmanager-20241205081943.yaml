@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  config.yaml: CnJlY2VpdmVyczoKICAtIG5hbWU6ICJub29wIgpyb3V0ZToKICByZWNlaXZlcjogIm5vb3AiCg==
+kind: Secret
+metadata:
+  annotations:
+    cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+    components.gke.io/component-name: managed_prometheus
+  creationTimestamp: "2024-10-18T07:12:42Z"
+  labels:
+    app: managed-prometheus-alertmanager
+    app.kubernetes.io/name: alertmanager
+  name: alertmanager
+  namespace: gmp-system
+  resourceVersion: "1943"
+  uid: 679874d8-709c-49a7-917c-679c8b29fc66
+type: Opaque

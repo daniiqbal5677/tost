@@ -1,0 +1,18 @@
+apiVersion: v1
+data:
+  config: |
+    nonMasqueradeCIDRs:
+      - 10.121.246.32/27
+      - 172.16.208.0/21
+    masqLinkLocal: false
+    resyncInterval: 60s
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"config":"nonMasqueradeCIDRs:\n  - 10.121.246.32/27\n  - 172.16.208.0/21\nmasqLinkLocal: false\nresyncInterval: 60s\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"ip-masq-agent","namespace":"kube-system"}}
+  creationTimestamp: "2024-10-18T07:31:56Z"
+  name: ip-masq-agent
+  namespace: kube-system
+  resourceVersion: "14824"
+  uid: c6bf2278-23a9-481e-90b7-b20f8d8a5c50

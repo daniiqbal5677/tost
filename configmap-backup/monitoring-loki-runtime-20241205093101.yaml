@@ -1,0 +1,20 @@
+apiVersion: v1
+data:
+  runtime-config.yaml: |
+    {}
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: loki-single
+    meta.helm.sh/release-namespace: monitoring
+  creationTimestamp: "2024-11-13T07:49:59Z"
+  labels:
+    app.kubernetes.io/instance: loki-single
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: loki
+    app.kubernetes.io/version: 3.2.0
+    helm.sh/chart: loki-6.19.0
+  name: loki-runtime
+  namespace: monitoring
+  resourceVersion: "27248994"
+  uid: 3b6e98c9-3811-4ada-b7e9-fa7cdbf4a51a

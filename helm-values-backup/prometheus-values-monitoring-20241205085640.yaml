@@ -1,0 +1,17 @@
+blackboxExporter:
+  enabled: false
+fullnameOverride: prometheus
+prometheus:
+  disableCompaction: true
+  enableRemoteWriteReceiver: true
+  evaluationInterval: 10s
+  retention: 1d
+  scrapeInterval: 10s
+  scrapeTimeout: 10s
+  thanos:
+    create: true
+    objectStorageConfig:
+      secretKey: thanos-objstore.yml
+      secretName: thanos-objstore
+rbac:
+  pspEnabled: false

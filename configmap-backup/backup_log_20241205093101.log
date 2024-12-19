@@ -1,0 +1,118 @@
+Backup ConfigMap dimulai pada Thu Dec  5 09:31:01 UTC 2024
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: default
+Backup sukses: /home/newloyalty/backup/configmap-backup/default-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: ksm-metrics-collector-config-map dari namespace: gke-managed-cim
+Backup sukses: /home/newloyalty/backup/configmap-backup/gke-managed-cim-ksm-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: gke-managed-cim
+Backup sukses: /home/newloyalty/backup/configmap-backup/gke-managed-cim-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: gke-managed-filestorecsi
+Backup sukses: /home/newloyalty/backup/configmap-backup/gke-managed-filestorecsi-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: gke-managed-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gke-managed-system-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: gmp-public
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-public-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: collector dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-system-collector-20241205093101.yaml
+Mencadangkan ConfigMap: config-images dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-system-config-images-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-system-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: rule-evaluator dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-system-rule-evaluator-20241205093101.yaml
+Mencadangkan ConfigMap: rules-generated dari namespace: gmp-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/gmp-system-rules-generated-20241205093101.yaml
+Mencadangkan ConfigMap: admin-ui-nginx-ingress-nginx-controller dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/configmap-backup/ingress-nginx-admin-ui-nginx-ingress-nginx-controller-20241205093101.yaml
+Mencadangkan ConfigMap: api-nginx-ingress-nginx-controller dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/configmap-backup/ingress-nginx-api-nginx-ingress-nginx-controller-20241205093101.yaml
+Mencadangkan ConfigMap: grafana-nginx-ingress-nginx-controller dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/configmap-backup/ingress-nginx-grafana-nginx-ingress-nginx-controller-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: ingress-nginx
+Backup sukses: /home/newloyalty/backup/configmap-backup/ingress-nginx-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: kube-node-lease
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-node-lease-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: kube-public
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-public-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: cluster-autoscaler-status dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-cluster-autoscaler-status-20241205093101.yaml
+Mencadangkan ConfigMap: cluster-kubestore dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-cluster-kubestore-20241205093101.yaml
+Mencadangkan ConfigMap: clustermetrics dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-clustermetrics-20241205093101.yaml
+Mencadangkan ConfigMap: core-metrics-exporter-conf dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-core-metrics-exporter-conf-20241205093101.yaml
+Mencadangkan ConfigMap: extension-apiserver-authentication dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-extension-apiserver-authentication-20241205093101.yaml
+Mencadangkan ConfigMap: filestorecsi-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-filestorecsi-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: fluentbit-gke-config-v1.4.0 dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-fluentbit-gke-config-v1.4.0-20241205093101.yaml
+Mencadangkan ConfigMap: fluentbit-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-fluentbit-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: gke-common-webhook-heartbeat dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-gke-common-webhook-heartbeat-20241205093101.yaml
+Mencadangkan ConfigMap: gke-metrics-agent-conf dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-gke-metrics-agent-conf-20241205093101.yaml
+Mencadangkan ConfigMap: ingress-uid dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-ingress-uid-20241205093101.yaml
+Mencadangkan ConfigMap: ip-masq-agent dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-ip-masq-agent-20241205093101.yaml
+Mencadangkan ConfigMap: konnectivity-agent-autoscaler-config dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-konnectivity-agent-autoscaler-config-20241205093101.yaml
+Mencadangkan ConfigMap: konnectivity-agent-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-konnectivity-agent-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: kube-apiserver-legacy-service-account-token-tracking dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kube-apiserver-legacy-service-account-token-tracking-20241205093101.yaml
+Mencadangkan ConfigMap: kube-dns dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kube-dns-20241205093101.yaml
+Mencadangkan ConfigMap: kube-dns-autoscaler dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kube-dns-autoscaler-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: kubedns-config-images dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kubedns-config-images-20241205093101.yaml
+Mencadangkan ConfigMap: kubedns-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-kubedns-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: metrics-server-config dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-metrics-server-config-20241205093101.yaml
+Mencadangkan ConfigMap: netd-config dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-netd-config-20241205093101.yaml
+Mencadangkan ConfigMap: netd-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-netd-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: networking-metrics-config dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-networking-metrics-config-20241205093101.yaml
+Mencadangkan ConfigMap: nvidia-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-nvidia-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: prometheus-metrics-collector-config-map dari namespace: kube-system
+Backup sukses: /home/newloyalty/backup/configmap-backup/kube-system-prometheus-metrics-collector-config-map-20241205093101.yaml
+Mencadangkan ConfigMap: envoy-worker-email-conf dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/loyalty-prod-envoy-worker-email-conf-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: loyalty-prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/loyalty-prod-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: grafana dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-grafana-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: loki dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-loki-20241205093101.yaml
+Mencadangkan ConfigMap: loki-runtime dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-loki-runtime-20241205093101.yaml
+Mencadangkan ConfigMap: loki-single-loki-stack dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-loki-single-loki-stack-20241205093101.yaml
+Mencadangkan ConfigMap: loki-single-loki-stack-test dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-loki-single-loki-stack-test-20241205093101.yaml
+Mencadangkan ConfigMap: prometheus-operator dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-prometheus-operator-20241205093101.yaml
+Mencadangkan ConfigMap: prometheus-prometheus-prometheus-rulefiles-0 dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-prometheus-prometheus-prometheus-rulefiles-0-20241205093101.yaml
+Mencadangkan ConfigMap: thanos-receive dari namespace: monitoring
+Backup sukses: /home/newloyalty/backup/configmap-backup/monitoring-thanos-receive-20241205093101.yaml
+Mencadangkan ConfigMap: kube-root-ca.crt dari namespace: prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/prod-kube-root-ca.crt-20241205093101.yaml
+Mencadangkan ConfigMap: redis-standalone-configuration dari namespace: prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/prod-redis-standalone-configuration-20241205093101.yaml
+Mencadangkan ConfigMap: redis-standalone-health dari namespace: prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/prod-redis-standalone-health-20241205093101.yaml
+Mencadangkan ConfigMap: redis-standalone-scripts dari namespace: prod
+Backup sukses: /home/newloyalty/backup/configmap-backup/prod-redis-standalone-scripts-20241205093101.yaml
+Backup ConfigMap selesai pada Thu Dec  5 09:31:08 UTC 2024

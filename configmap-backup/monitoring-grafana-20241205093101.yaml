@@ -1,0 +1,64 @@
+apiVersion: v1
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+    - jsonData:
+        httpMethod: GET
+      name: Prometheus
+      type: prometheus
+      uid: prometheus
+      url: http://prometheus-prometheus.monitoring:9090
+    - access: proxy
+      isDefault: true
+      name: Thanos
+      type: prometheus
+      uid: thanos
+      url: http://thanos-query-frontend.monitoring:9090
+    - access: proxy
+      jsonData:
+        maxLines: 1000
+        timeout: 300
+      name: Loki
+      type: loki
+      uid: loki
+      url: http://loki-single.monitoring:3100/
+    deleteDatasources: null
+  grafana.ini: |
+    [analytics]
+    check_for_updates = true
+    [grafana_net]
+    url = https://grafana.net
+    [log]
+    mode = console
+    [paths]
+    data = /var/lib/grafana/
+    logs = /var/log/grafana
+    plugins = /var/lib/grafana/plugins
+    provisioning = /etc/grafana/provisioning
+    [server]
+    domain = grafana-loyalty.adira.co.id
+    enable_gzip = true
+    enforce_domain = false
+    root_url = https://grafana-loyalty.adira.co.id
+    [smtp]
+    enabled = false
+    [users]
+    viewers_can_edit = true
+  plugins: redis-datasource
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: grafana
+    meta.helm.sh/release-namespace: monitoring
+  creationTimestamp: "2024-11-08T09:26:52Z"
+  labels:
+    app.kubernetes.io/instance: grafana
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/version: 11.3.0
+    helm.sh/chart: grafana-8.5.12
+  name: grafana
+  namespace: monitoring
+  resourceVersion: "26011812"
+  uid: 9d1d6a7c-8e40-43dc-b582-75a4c3bbac0e

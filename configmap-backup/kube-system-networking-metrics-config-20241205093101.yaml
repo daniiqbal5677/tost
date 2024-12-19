@@ -1,0 +1,19 @@
+apiVersion: v1
+data:
+  export_interval: 2m
+  metrics_address: localhost:10231
+  metrics_collectors: conntrack,socket,pod_ip_metrics,kernel_metrics
+  stack_type: IPV4
+kind: ConfigMap
+metadata:
+  annotations:
+    components.gke.io/component-name: netd-combined
+    components.gke.io/component-version: 10.7.3
+    components.gke.io/layer: addon
+  creationTimestamp: "2024-10-18T07:59:40Z"
+  labels:
+    addonmanager.kubernetes.io/mode: Reconcile
+  name: networking-metrics-config
+  namespace: kube-system
+  resourceVersion: "33356"
+  uid: 6c5d8466-fc50-4a39-bdba-90527fc9a128
